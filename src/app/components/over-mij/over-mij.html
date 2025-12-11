@@ -1,0 +1,92 @@
+<section id="over-mij" class="section" #section>
+  <div class="icons-container" [class.shaking]="isShaking">
+    <div class="icons-track">
+      @for (icon of icons; track icon; let i = $index) {
+        <div class="icon-wrapper" [style.animation-delay]="i * 0.2 + 's'">
+          <div class="icon-circle">
+            <img [src]="'icons/' + icon" [alt]="icon" class="icon">
+          </div>
+        </div>
+      }
+      @for (icon of icons; track icon; let i = $index) {
+        <div class="icon-wrapper" [style.animation-delay]="i * 0.2 + 's'">
+          <div class="icon-circle">
+            <img [src]="'icons/' + icon" [alt]="icon" class="icon">
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+  <div class="section-content">
+    <h2>Over Mij</h2>
+
+    <div class="content-wrapper">
+      <div class="timeline-column">
+        <div class="timeline">
+          @for (event of timelineEvents; track event.year) {
+            @if (event.milestone) {
+              <div class="timeline-milestone">
+                <div class="milestone-icon">
+                  <img [src]="event.logo" [alt]="'Milestone'" class="milestone-image">
+                  <div class="milestone-tooltip">{{ event.tooltipText }}</div>
+                </div>
+              </div>
+            } @else {
+              <div class="timeline-item" [class.left]="event.side === 'left'" [class.right]="event.side === 'right'">
+                <div class="timeline-content">
+                  <img [src]="event.logo" [alt]="event.title" class="timeline-logo">
+                  <div class="timeline-text">
+                    <div class="timeline-year">{{ event.year }}</div>
+                    <h3>{{ event.title }}</h3>
+                    <p>{{ event.description }}</p>
+                  </div>
+                </div>
+                <div class="timeline-dot"></div>
+              </div>
+            }
+          }
+        </div>
+      </div>
+
+      <div class="info-column">
+        <div class="info-card">
+          <div class="info-header">
+            <div class="avatar">VH</div>
+            <h3>Vincent Huisman</h3>
+            <p class="subtitle">Full Stack Developer</p>
+          </div>
+          <div class="info-body">
+            <p>
+              Ik ben Vincent Huisman, Java-consultant bij Quintor in Groningen.
+              Ik werk met Java, Python en .NET en bouw dagelijks aan robuuste backends, schaalbare platforms en slimme automatisering.
+              Ik hou van duidelijke architectuur, clean code en oplossingen die écht werken in productie.
+            </p>
+            <p>
+              Met jarenlange ervaring in zowel front-end als back-end development,
+              help ik bedrijven hun digitale visie tot leven te brengen. Van concept
+              tot deployment, ik ben betrokken bij elk aspect van het ontwikkelproces.
+            </p>
+            <div class="info-details">
+              <div class="detail-item">
+                <strong>Locatie:</strong>
+                <span>Groningen, Nederland</span>
+              </div>
+              <div class="detail-item">
+                <strong>Email:</strong>
+                <span>vjhuisman@gmail.com</span>
+              </div>
+              <div class="detail-item">
+                <strong>LinkedIn:</strong>
+                <span><a href="https://www.linkedin.com/in/vincent-huisman"
+                         target="_blank"
+                         rel="noopener noreferrer">
+   LinkedIn.com/Vincent-Huisman
+</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

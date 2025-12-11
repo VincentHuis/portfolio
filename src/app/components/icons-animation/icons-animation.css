@@ -1,0 +1,67 @@
+.icons-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: white;
+  padding: 4rem 0;
+  position: relative;
+}
+
+.icons-track {
+  display: flex;
+  gap: 3rem;
+  animation: scroll 30s linear infinite;
+  width: fit-content;
+}
+
+.icon-wrapper {
+  animation: float 3s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.icon-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.icon-circle:hover {
+  transform: scale(1.1);
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.icon-wrapper:nth-child(even) {
+  animation-duration: 3.5s;
+}
+
+.icon-wrapper:nth-child(3n) {
+  animation-duration: 4s;
+}

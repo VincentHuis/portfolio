@@ -1,0 +1,19 @@
+<section id="projecten" class="section">
+  <div class="section-content">
+    <h2>Projecten</h2>
+    <div class="projects-grid">
+      @for (project of projects; track project.title) {
+        <div class="project-card">
+          <div class="project-image">
+            <img [src]="project.image" [alt]="project.title">
+          </div>
+          <div class="project-info">
+            <h3>{{ project.title }}</h3>
+            <p class="subtitle">{{ project.subtitle }}</p>
+            <p class="description">{{ project.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

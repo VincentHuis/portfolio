@@ -1,0 +1,18 @@
+<div class="icons-container">
+  <div class="icons-track">
+    @for (icon of icons; track icon; let i = $index) {
+      <div class="icon-wrapper" [style.animation-delay]="i * 0.2 + 's'">
+        <div class="icon-circle">
+          <img [src]="'icons/' + icon" [alt]="icon" class="icon">
+        </div>
+      </div>
+    }
+    @for (icon of icons; track icon; let i = $index) {
+      <div class="icon-wrapper" [style.animation-delay]="i * 0.2 + 's'">
+        <div class="icon-circle">
+          <img [src]="'icons/' + icon" [alt]="icon" class="icon">
+        </div>
+      </div>
+    }
+  </div>
+</div>
