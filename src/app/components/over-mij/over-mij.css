@@ -403,6 +403,7 @@ h2 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 100px;
+  margin-right: 150px;
 }
 
 .info-header {
@@ -471,6 +472,98 @@ h2 {
   color: #666;
 }
 
+/* Skills Card styles */
+.skills-card {
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  margin-right: 150px;
+  padding: 2rem;
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skills-title {
+  color: black;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.skill-item {
+  background-color: white;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(0, 0, 0, 0.03) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background-color: #fafafa;
+}
+
+.skill-item:hover::before {
+  opacity: 1;
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover .skill-icon {
+  transform: rotate(360deg) scale(1.1);
+}
+
+.skill-name {
+  color: black;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
 @media (max-width: 968px) {
   .content-wrapper {
     flex-direction: column;
@@ -479,6 +572,14 @@ h2 {
   .info-card {
     position: relative;
     top: 0;
+  }
+
+  .skills-card {
+    margin-right: 0;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .timeline::before {

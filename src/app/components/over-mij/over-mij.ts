@@ -59,7 +59,7 @@ export class OverMij implements AfterViewInit {
       title: 'Croptimise',
       description: 'Eigen bedrijf opgericht',
       side: 'right',
-      logo: 'companys/croptimise.png'
+      logo: 'companys/croptimise_logo.png'
     },
     {
       year: '2019',
@@ -128,6 +128,40 @@ export class OverMij implements AfterViewInit {
 
   isShaking = false;
   hasShaken = false;
+
+  skills = [
+    {
+      category: 'Languages',
+      items: [
+        { name: 'Java', level: 90, icon: '☕' },
+        { name: 'Python', level: 85, icon: '🐍' },
+        { name: 'C#', level: 80, icon: '💠' },
+        { name: 'TypeScript', level: 85, icon: '📘' },
+        { name: 'SQL', level: 80, icon: '🗄️' },
+        { name: 'HTML', level: 90, icon: '🌐' },
+        { name: 'CSS', level: 85, icon: '🎨' }
+      ]
+    },
+    {
+      category: 'Frameworks',
+      items: [
+        { name: 'Spring Boot', level: 90, icon: '🍃' },
+        { name: '.NET Core', level: 80, icon: '🔷' },
+        { name: 'Angular', level: 85, icon: '🅰️' },
+        { name: 'React', level: 75, icon: '⚛️' },
+      ]
+    },
+    {
+      category: 'Tools & Technologies',
+      items: [
+        { name: 'Docker', level: 85, icon: '🐳' },
+        { name: 'Git', level: 90, icon: '📦' },
+        { name: 'PostgreSQL', level: 85, icon: '🐘' },
+        { name: 'Gen AI', level: 85, icon: '🤖' },
+        { name: 'CI/CD', level: 85, icon: '🔄' }
+      ]
+    }
+  ];
 
   ngAfterViewInit() {
     const observer = new IntersectionObserver((entries) => {

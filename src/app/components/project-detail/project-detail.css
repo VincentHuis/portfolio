@@ -1,0 +1,304 @@
+.project-detail {
+  min-height: 100vh;
+  background-color: white;
+  padding-top: 68px;
+}
+
+.project-header {
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  padding: 2rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  color: black;
+}
+
+.back-button:hover {
+  background-color: black;
+  color: white;
+  transform: translateX(-4px);
+}
+
+.back-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.header-image {
+  flex: 0 0 auto;
+}
+
+.header-image img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border: 5px solid white;
+}
+
+.header-info {
+  flex: 1;
+}
+
+.header-info h1 {
+  font-size: 3rem;
+  color: black;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.header-info .subtitle {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.header-info .year {
+  font-size: 1.1rem;
+  color: #888;
+  margin-bottom: 1.5rem;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-badge {
+  padding: 0.5rem 1rem;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.project-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.project-description {
+  line-height: 1.8;
+  color: #333;
+}
+
+.project-description ::ng-deep h3 {
+  font-size: 1.8rem;
+  color: black;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.project-description ::ng-deep h3:first-child {
+  margin-top: 0;
+}
+
+.project-description ::ng-deep p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+.project-description ::ng-deep ul {
+  margin-bottom: 1.5rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.project-description ::ng-deep li {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: #444;
+  padding-left: 1.75rem;
+  position: relative;
+  line-height: 1.8;
+}
+
+.project-description ::ng-deep li::before {
+  content: "•";
+  position: absolute;
+  left: 0.5rem;
+  color: black;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.project-description ::ng-deep strong {
+  color: black;
+  font-weight: 600;
+}
+
+.youtube-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e8e8e8;
+}
+
+.youtube-section h3 {
+  font-size: 1.8rem;
+  color: black;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.youtube-videos {
+  display: grid;
+  gap: 2rem;
+}
+
+.youtube-video {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.youtube-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-not-found {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: white;
+}
+
+.project-not-found h2 {
+  font-size: 2rem;
+  color: black;
+}
+
+.btn-primary {
+  padding: 0.875rem 1.75rem;
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #333;
+  border-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 968px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-image img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .header-info h1 {
+    font-size: 2rem;
+  }
+
+  .header-info .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .technologies {
+    justify-content: center;
+  }
+
+  .project-body {
+    padding: 2rem 1rem;
+  }
+
+  .project-description ::ng-deep h3 {
+    font-size: 1.5rem;
+  }
+
+  .project-description ::ng-deep p,
+  .project-description ::ng-deep li {
+    font-size: 1rem;
+  }
+
+  .youtube-section h3 {
+    font-size: 1.5rem;
+  }
+
+  .youtube-video {
+    padding: 1rem;
+  }
+
+  .video-title {
+    font-size: 1rem;
+  }
+}

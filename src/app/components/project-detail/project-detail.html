@@ -1,0 +1,71 @@
+@if (project) {
+  <div class="project-detail">
+    <div class="project-header">
+      <button class="back-button" (click)="goBack()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Terug naar overzicht
+      </button>
+
+      <div class="header-content">
+        <div class="header-image">
+          <img [src]="project.image" [alt]="project.title">
+        </div>
+        <div class="header-info">
+          <h1>{{ project.title }}</h1>
+          <p class="subtitle">{{ project.subtitle }}</p>
+          @if (project.year) {
+            <p class="year">{{ project.year }}</p>
+          }
+          @if (project.technologies) {
+            <div class="technologies">
+              @for (tech of project.technologies; track tech) {
+                <span class="tech-badge">{{ tech }}</span>
+              }
+            </div>
+          }
+          @if (project.link) {
+            <a [href]="project.link" target="_blank" class="project-link">
+              Bezoek website
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+              </svg>
+            </a>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="project-body">
+      <div class="project-description">
+        <div [innerHTML]="project.detailedDescription"></div>
+      </div>
+
+      @if (project.youtubeVideos && project.youtubeVideos.length > 0) {
+        <div class="youtube-section">
+          <h3>Video's</h3>
+          <div class="youtube-videos">
+            @for (video of project.youtubeVideos; track video.videoId) {
+              <div class="youtube-video">
+                <p class="video-title">{{ video.title }}</p>
+                <iframe
+                  [src]="getSafeYoutubeUrl(video.videoId)"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+} @else {
+  <div class="project-not-found">
+    <h2>Project niet gevonden</h2>
+    <button class="btn-primary" (click)="goBack()">Terug naar overzicht</button>
+  </div>
+}

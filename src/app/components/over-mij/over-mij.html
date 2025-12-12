@@ -86,6 +86,20 @@
             </div>
           </div>
         </div>
+
+        <div class="skills-card">
+          <h3 class="skills-title">Skills & Expertise</h3>
+          <div class="skills-grid">
+            @for (skillGroup of skills; track skillGroup.category) {
+              @for (skill of skillGroup.items; track skill.name) {
+                <div class="skill-item">
+                  <span class="skill-icon">{{ skill.icon }}</span>
+                  <span class="skill-name">{{ skill.name }}</span>
+                </div>
+              }
+            }
+          </div>
+        </div>
       </div>
     </div>
   </div>
