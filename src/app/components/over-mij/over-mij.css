@@ -564,6 +564,22 @@ h2 {
   text-align: center;
 }
 
+/* Large tablets and small desktops */
+@media (max-width: 1200px) {
+  .info-card {
+    margin-right: 50px;
+  }
+
+  .skills-card {
+    margin-right: 50px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablets */
 @media (max-width: 968px) {
   .content-wrapper {
     flex-direction: column;
@@ -572,6 +588,7 @@ h2 {
   .info-card {
     position: relative;
     top: 0;
+    margin-right: 0;
   }
 
   .skills-card {
@@ -579,7 +596,7 @@ h2 {
   }
 
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .timeline::before {
@@ -609,5 +626,106 @@ h2 {
 
   .timeline-content {
     max-width: 100%;
+  }
+}
+
+/* Small tablets and large phones */
+@media (max-width: 640px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .skills-card {
+    padding: 1.5rem;
+  }
+
+  .skills-title {
+    font-size: 1.5rem;
+  }
+
+  .skill-item {
+    padding: 0.75rem;
+  }
+
+  .skill-icon {
+    font-size: 2rem;
+  }
+
+  .skill-name {
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .section-content {
+    padding: 0 1rem 4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+
+  .skills-card {
+    padding: 1rem;
+  }
+
+  .skills-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .skill-item {
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
+
+  .skill-icon {
+    font-size: 1.75rem;
+  }
+
+  .skill-name {
+    font-size: 0.75rem;
+  }
+
+  .skill-item:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  .info-card {
+    border-radius: 8px;
+  }
+
+  .info-header {
+    padding: 1.5rem;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+
+  .info-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .info-body {
+    padding: 1.5rem;
+  }
+
+  .info-body p {
+    font-size: 0.95rem;
   }
 }
