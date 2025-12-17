@@ -207,7 +207,7 @@ export class ParticleBackgroundComponent implements AfterViewInit, OnDestroy {
     const dy = y - this.mouseY;
     const distance = Math.sqrt(dx * dx + dy * dy);
 
-    const inner = 90;
+    const inner = 10;
     const outer = 150;
 
     let mouseFade = 1;
