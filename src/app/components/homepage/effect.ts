@@ -203,44 +203,47 @@ export class ParticleBackgroundComponent implements AfterViewInit, OnDestroy {
   private drawParticle(particle: Particle): void {
     const { x, y, opacity, hue, text } = particle;
 
-    // Afstand tot muis
     const dx = x - this.mouseX;
     const dy = y - this.mouseY;
     const distance = Math.sqrt(dx * dx + dy * dy);
 
-    // Zachte cutoff zone
-    const inner = 90;   // volledig onzichtbaar
-    const outer = 150;  // volledig zichtbaar
+    const inner = 90;
+    const outer = 150;
 
     let mouseFade = 1;
     if (distance < inner) {
       mouseFade = 0;
     } else if (distance < outer) {
       const t = (distance - inner) / (outer - inner);
-      mouseFade = t * t; // quadratic fade
+      mouseFade = t * t;
     }
-
     if (mouseFade <= 0) return;
 
-    // Langzame flicker
-    particle.flickerPhase += 0.02;
+    particle.flickerPhase += 0.015;
     const flicker = (Math.sin(particle.flickerPhase) + 1) / 2;
 
-    const alpha =
+    let alpha =
       opacity *
       mouseFade *
-      (0.3 + flicker * 0.5);
+      (0.15 + flicker * 0.25);
+
+    // edge fade
+    const edgePadding = 80;
+    const edgeFadeX = Math.min(
+      Math.min(x / edgePadding, (this.ctx.canvas.width - x) / edgePadding),
+      1
+    );
+    const edgeFadeY = Math.min(
+      Math.min(y / edgePadding, (this.ctx.canvas.height - y) / edgePadding),
+      1
+    );
+    alpha *= Math.max(0, Math.min(edgeFadeX, edgeFadeY));
 
     this.ctx.font = '11px monospace';
     this.ctx.textBaseline = 'top';
+    this.ctx.fillStyle = `rgba(30, 30, 30, ${alpha})`;
 
-    this.ctx.fillText(
-      text,
-      Math.round(x),
-      Math.round(y)
-    );
+    this.ctx.fillText(text, Math.round(x), Math.round(y));
   }
-
-
 
 }
