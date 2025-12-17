@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import {ParticleBackgroundComponent} from './effect';
 
 @Component({
   selector: 'app-homepage',
-  imports: [],
+  imports: [
+  ],
   templateUrl: './homepage.html',
   styleUrl: './homepage.css',
 })

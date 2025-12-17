@@ -126,8 +126,8 @@ export class OverMij implements AfterViewInit {
     },
   ];
 
-  isShaking = false;
-  hasShaken = false;
+  hasVisited = false;
+  isFloating = false;
 
   skills = [
     {
@@ -166,13 +166,9 @@ export class OverMij implements AfterViewInit {
   ngAfterViewInit() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting && !this.hasShaken) {
-          console.log('Shake animation triggered!');
-          this.isShaking = true;
-          this.hasShaken = true;
-          setTimeout(() => {
-            this.isShaking = false;
-          }, 1500);
+        if (entry.isIntersecting && !this.hasVisited) {
+          this.hasVisited = true;
+          this.isFloating = true;
         }
       });
     }, { threshold: 0.2 });
