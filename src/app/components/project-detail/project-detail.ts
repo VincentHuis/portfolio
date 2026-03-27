@@ -27,6 +27,77 @@ export class ProjectDetail implements OnInit {
 
   projects: Project[] = [
     {
+      slug: 'qwest',
+      title: 'Qwest',
+      subtitle: 'D&D Campaign Tool',
+      description: 'Een webapplicatie waarmee je Dungeons & Dragons campagnes digitaal beheert en speelt.',
+      detailedDescription: `
+<h3>Over het project</h3>
+<p>Qwest is een fullstack webapplicatie waarmee je Dungeons & Dragons campagnes digitaal beheert en speelt. Het project is gebouwd als een ambitieuze oefening in complexe architectuur, realtime communicatie, security en AI integratie. De applicatie draait op Angular aan de frontend en Spring Boot aan de backend.</p>
+
+<h3>Campaigns en sessions</h3>
+<p>Een Game Master kan campagnes aanmaken, spelers uitnodigen en sessions plannen, starten en stoppen. Binnen een sessie beschikt iedereen over een realtime chatsysteem dat is gebouwd op WebSockets (STOMP). Het chatsysteem ondersteunt commando's zoals <strong>/roll</strong> voor dice rolls met modifiers (bijvoorbeeld 2d6+3), <strong>/session</strong> voor sessiebeheer en <strong>/kick</strong> om spelers te verwijderen. Berichten hebben visibility levels: sommige berichten zijn alleen zichtbaar voor de GM, andere voor iedereen.</p>
+
+<h3>Characters en NPC's</h3>
+<p>Spelers kunnen hun eigen characters aanmaken met volledige stats (STR, DEX, CON, etc.) inclusief automatisch berekende modifiers. Voor de GM zijn er NPC templates waarmee snel nieuwe NPC instances aangemaakt kunnen worden. Zowel characters als NPC's kunnen afbeeldingen hebben die via de backend worden opgeslagen.</p>
+
+<h3>AI NPC's met Spring AI</h3>
+<p>Een van de meest experimentele features is de integratie van AI gestuurde NPC's via Spring AI. NPC's kunnen reageren in de chat op basis van hun karakter, achtergrondverhaal en de context van het gesprek. Dit maakt het mogelijk om als GM geautomatiseerde, in character reacties te krijgen van NPC's, wat de immersie van het spel versterkt.</p>
+
+<h3>Security</h3>
+<p>De applicatie maakt gebruik van stateless JWT authenticatie via Spring Security. Daarnaast is WebAuthn (passkeys) geïntegreerd als moderne inlogmethode. Het permissiesysteem is fijnmazig opgezet: GM only acties zijn afgeschermd en bij elke actie wordt gecontroleerd of de gebruiker lid is van de betreffende campaign.</p>
+
+<h3>Samenwerken</h3>
+<p>Het project is ontwikkeld in teamverband met een gedeelde GitLab repository, CI/CD pipelines en code reviews. De samenwerking richtte zich op het verdelen van features, het reviewen van elkaars code en het samen oplossen van complexe technische vraagstukken rondom realtime communicatie en security.</p>
+
+<h3>Technische details</h3>
+<ul>
+  <li><strong>Backend:</strong> Java 21 met Spring Boot, Spring Security, Spring AI en WebSockets (STOMP)</li>
+  <li><strong>Frontend:</strong> Angular 21 met TypeScript</li>
+  <li><strong>Database:</strong> MySQL met Liquibase voor migraties</li>
+  <li><strong>Security:</strong> JWT (stateless) en WebAuthn (passkeys)</li>
+  <li><strong>Realtime:</strong> WebSockets via STOMP protocol</li>
+  <li><strong>Command parsing:</strong> Regex based input handling voor dice syntax en chat commando's</li>
+</ul>
+
+<h3>Doel</h3>
+<p>Qwest is niet primair een commercieel product, maar een project om diepgaand te leren over complexe architectuur, security, realtime communicatie en AI integratie binnen een fullstack applicatie. Het digitaliseren van D&D gameplay was daarbij de perfecte context om al deze technologieën samen te brengen in één ambitieus geheel.</p>
+      `,
+      image: 'projecten/qwest.png',
+      technologies: ['Spring Boot', 'Spring AI', 'Angular', 'Java 21', 'WebSockets', 'JWT', 'WebAuthn', 'MySQL', 'Liquibase', 'TypeScript', 'CI/CD'],
+      year: '2025'
+    },
+    {
+      slug: 'quintor-masterclass',
+      title: 'Quintor Masterclass',
+      subtitle: 'Intensief leertraject',
+      description: 'Een praktijkgericht leertraject bij Quintor met focus op professionele Java backend development.',
+      detailedDescription: `
+<h3>Over het traject</h3>
+<p>Bij Quintor heb ik een intensieve masterclass gevolgd gericht op professionele Java backend development. Het traject was bewust praktijkgericht opgezet: niet te veel theorie, maar vooral bouwen, samenwerken en direct toepasbare kennis opdoen. Precies de manier van leren die bij mij het beste werkt.</p>
+
+<h3>Wat ik heb geleerd</h3>
+<p>De masterclass behandelde de volledige basis die je nodig hebt om als Java consultant professioneel te kunnen ontwikkelen:</p>
+<ul>
+  <li><strong>Spring Boot:</strong> Het opzetten en structureren van applicaties, dependency injection en het werken met het Spring ecosysteem</li>
+  <li><strong>REST API's:</strong> Het ontwerpen en bouwen van schaalbare API's volgens best practices</li>
+  <li><strong>Security:</strong> Authenticatie en autorisatie implementeren binnen Spring Security</li>
+  <li><strong>Database integratie:</strong> Werken met JPA en Hibernate voor data persistentie</li>
+  <li><strong>Testing:</strong> Unit tests en integratietests schrijven als vast onderdeel van het ontwikkelproces</li>
+  <li><strong>Clean code en architectuur:</strong> Layered architecture, duidelijke verantwoordelijkheden en onderhoudbare code</li>
+</ul>
+
+<h3>Werkwijze</h3>
+<p>Het leren gebeurde door opdrachten te bouwen in teamverband. Daarbij hoorde het werken met merge requests, het geven en ontvangen van code reviews en het gezamenlijk oplossen van technische vraagstukken. Dit sloot naadloos aan op hoe er in de praktijk bij klanten wordt gewerkt.</p>
+
+<h3>Impact</h3>
+<p>De masterclass was een praktische versneller richting professioneel Java development. De kennis en werkwijze die ik hier heb opgedaan gebruik ik dagelijks. Het komt direct terug in hoe ik nu zelfstandig complexe projecten opzet: van Spring Boot met security en WebSockets tot het nadenken over architectuur, permissies en domain modeling.</p>
+      `,
+      image: 'companys/quintor.png',
+      technologies: ['Spring Boot', 'Java', 'REST API', 'Spring Security', 'JPA', 'Hibernate', 'Testing', 'Clean Architecture'],
+      year: '2025'
+    },
+    {
       slug: 'afstudeerstage-politie',
       title: 'Afstudeerstage',
       subtitle: 'Innovatiehuis Politie Noord-Nederland',

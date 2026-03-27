@@ -10,12 +10,37 @@ import { RouterModule } from '@angular/router';
 })
 export class Projecten {
   projects = [
+    // Uitgelicht
     {
       slug: 'afstudeerstage-politie',
       title: 'Afstudeerstage',
       subtitle: 'Innovatiehuis Politie Noord-Nederland',
       description: 'Ontwikkeling van een modulaire paslezer voor de financiële recherche. De paslezer kan data uitlezen van creditcards, bankpassen, cryptokaarten, cadeaukaarten en identiteitsdocumenten zoals ID en paspoort. Dit gebeurt via NFC, magneetstrip en camera.',
-      image: 'companys/politie_logo.png'
+      image: 'companys/politie_logo.png',
+      featured: true
+    },
+    {
+      slug: 'croptimise',
+      title: 'Eigen bedrijf',
+      subtitle: 'Croptimise opgericht',
+      description: 'Met drie anderen heb ik Croptimise opgericht, een startup die zich richt op innovatie binnen de agrarische sector. We ontwikkelden de Smart Potato, een slimme sensor die de omstandigheden in de bodem continu meet en deze gegevens realtime doorstuurt naar de boer. Met Croptimise ben ik 3e geworden bij de Rabobank ondernemers prijs 2023. We hadden en partnerschap met VodafoneZiggo, 5Groningen, Hanze, TNO en Dell EMC / VMware.',
+      image: 'header/header_croptimise.png',
+      featured: true
+    },
+    // Overige
+    {
+      slug: 'qwest',
+      title: 'Qwest',
+      subtitle: 'D&D Campaign Tool',
+      description: 'Een webapplicatie waarmee je Dungeons & Dragons campagnes digitaal beheert en speelt. Gebouwd met Angular en Spring Boot, inclusief realtime chat, dice rolling, AI gestuurde NPC\'s via Spring AI en een uitgebreid permissiesysteem.',
+      image: 'projecten/qwest.png'
+    },
+    {
+      slug: 'quintor-masterclass',
+      title: 'Quintor Masterclass',
+      subtitle: 'Intensief leertraject',
+      description: 'Een praktijkgericht leertraject bij Quintor met focus op professionele Java backend development. Van Spring Boot en REST API\'s tot security, testing en clean architecture, volledig hands on en direct toepasbaar.',
+      image: 'companys/quintor.png'
     },
     {
       slug: 'ocphell',
@@ -23,13 +48,6 @@ export class Projecten {
       subtitle: 'Online platform',
       description: 'Een online platform voor het oefenen en trainen van Oracle Certified Professional examens. Volledige quiz-applicatie met progress tracking en uitgebreide uitleg.',
       image: 'header/header_ocphell.png'
-    },
-    {
-      slug: 'croptimise',
-      title: 'Eigen bedrijf',
-      subtitle: 'Croptimise opgericht',
-      description: 'Met drie anderen heb ik Croptimise opgericht, een startup die zich richt op innovatie binnen de agrarische sector. We ontwikkelden de Smart Potato, een slimme sensor die de omstandigheden in de bodem continu meet en deze gegevens realtime doorstuurt naar de boer. Met Croptimise ben ik 3e geworden bij de Rabobank ondernemers prijs 2023. We hadden en partnerschap met VodafoneZiggo, 5Groningen, Hanze, TNO en Dell EMC / VMware.',
-      image: 'header/header_croptimise.png'
     },
     {
       slug: 'mobile-games',

@@ -1,78 +1,84 @@
 .section {
-  background-color: white;
+  background-color: var(--color-bg);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 6rem 2rem;
 }
 
 .section-content {
-  max-width: 800px;
+  max-width: 700px;
   width: 100%;
+  text-align: center;
 }
 
 h2 {
-  color: black;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  text-align: center;
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+  font-style: italic;
 }
 
 .contact-card {
-  background-color: #f5f5f5;
-  border-radius: 16px;
-  padding: 3rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 3.5rem 3rem;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .contact-text {
-  color: #333;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  line-height: 1.6;
+  color: var(--color-ink-light);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.contact-text:last-of-type {
+  margin-bottom: 2rem;
 }
 
 .email-link {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  color: black;
-  font-size: 1.5rem;
-  font-weight: 600;
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 500;
   text-decoration: none;
-  margin-top: 1rem;
   padding: 1rem 2rem;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  border: 2px solid var(--color-ink);
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  letter-spacing: 0.02em;
 }
 
 .email-link:hover {
-  background-color: black;
-  color: white;
-  transform: scale(1.05);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-ink);
+  color: var(--color-bg);
+  border-color: var(--color-ink);
 }
 
 .email-icon {
-  font-size: 2rem;
+  font-size: 1.4rem;
   transition: transform 0.3s ease;
 }
 
 .email-link:hover .email-icon {
-  transform: rotate(15deg) scale(1.1);
+  transform: rotate(12deg);
 }
 
 @media (max-width: 768px) {
   .contact-card {
-    padding: 2rem;
+    padding: 2.5rem 1.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
   }
 
   .contact-text {
@@ -80,11 +86,11 @@ h2 {
   }
 
   .email-link {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     padding: 0.75rem 1.5rem;
   }
 
   .email-icon {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
