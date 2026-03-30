@@ -42,7 +42,7 @@ interface Particle {
 export class ParticleBackgroundComponent implements AfterViewInit, OnDestroy {
   @ViewChild('canvas') canvasRef!: ElementRef<HTMLCanvasElement>;
   @Input() particleCount = 200;
-  @Input() baseHue = 30;
+  @Input() baseHue = 220;
   @Input() minRadius = 80; // Minimum distance from mouse
   @Input() maxRadius = 400; // Maximum distance from mouse
   @Input() fadeInnerRadius = 100; // Fade when closer than this
@@ -239,9 +239,9 @@ export class ParticleBackgroundComponent implements AfterViewInit, OnDestroy {
     );
     alpha *= Math.max(0, Math.min(edgeFadeX, edgeFadeY));
 
-    this.ctx.font = '11px monospace';
+    this.ctx.font = '11px "Space Mono", monospace';
     this.ctx.textBaseline = 'top';
-    this.ctx.fillStyle = `rgba(30, 30, 30, ${alpha})`;
+    this.ctx.fillStyle = `rgba(10, 10, 10, ${alpha})`;
 
     this.ctx.fillText(text, Math.round(x), Math.round(y));
   }

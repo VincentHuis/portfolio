@@ -1,60 +1,75 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import {Component} from '@angular/core';
+import {TextRotateComponent} from '../text-rotate/text-rotate';
 
 @Component({
   selector: 'app-projecten',
-  imports: [CommonModule, RouterModule],
+    imports: [TextRotateComponent],
   templateUrl: './projecten.html',
   styleUrl: './projecten.css',
 })
 export class Projecten {
+    rotatingTexts = ['werkend.', 'mooi.', 'snel.', 'robuust.', 'schaalbaar.'];
+
   projects = [
-    // Uitgelicht
     {
       slug: 'afstudeerstage-politie',
       title: 'Afstudeerstage',
       subtitle: 'Innovatiehuis Politie Noord-Nederland',
-      description: 'Ontwikkeling van een modulaire paslezer voor de financiële recherche. De paslezer kan data uitlezen van creditcards, bankpassen, cryptokaarten, cadeaukaarten en identiteitsdocumenten zoals ID en paspoort. Dit gebeurt via NFC, magneetstrip en camera.',
+        description: 'Modulaire paslezer gebouwd voor de financiële recherche. Leest creditcards, bankpassen, cryptokaarten en ID\'s uit via NFC, magneetstrip en camera.',
       image: 'companys/politie_logo.png',
-      featured: true
+        technologies: ['Python', 'Raspberry Pi', 'NFC / RFID', 'OCR', 'Computer Vision', 'Security'],
+        year: '2023',
+        featured: true,
     },
     {
       slug: 'croptimise',
-      title: 'Eigen bedrijf',
-      subtitle: 'Croptimise opgericht',
-      description: 'Met drie anderen heb ik Croptimise opgericht, een startup die zich richt op innovatie binnen de agrarische sector. We ontwikkelden de Smart Potato, een slimme sensor die de omstandigheden in de bodem continu meet en deze gegevens realtime doorstuurt naar de boer. Met Croptimise ben ik 3e geworden bij de Rabobank ondernemers prijs 2023. We hadden en partnerschap met VodafoneZiggo, 5Groningen, Hanze, TNO en Dell EMC / VMware.',
+        title: 'Croptimise',
+        subtitle: 'Eigen bedrijf opgericht',
+        description: 'Startup in de agrarische sector. De Smart Potato meet bodemomstandigheden en stuurt data realtime door naar de boer.',
       image: 'header/header_croptimise.png',
-      featured: true
+        technologies: ['IoT', 'LoRaWAN', 'Cloud Computing', 'Angular', 'Python', 'Data Analytics'],
+        year: '2023',
+        featured: true,
     },
-    // Overige
     {
       slug: 'qwest',
       title: 'Qwest',
       subtitle: 'D&D Campaign Tool',
-      description: 'Een webapplicatie waarmee je Dungeons & Dragons campagnes digitaal beheert en speelt. Gebouwd met Angular en Spring Boot, inclusief realtime chat, dice rolling, AI gestuurde NPC\'s via Spring AI en een uitgebreid permissiesysteem.',
-      image: 'projecten/qwest.png'
+        description: 'Fullstack D&D tool met realtime chat, AI gestuurde NPC\'s en fijnmazig permissiesysteem.',
+        image: 'projecten/qwest.png',
+        technologies: ['Spring Boot', 'Spring AI', 'Angular', 'Java 21', 'WebSockets', 'JWT', 'WebAuthn', 'MySQL'],
+        year: '2025',
+        featured: false,
     },
     {
       slug: 'quintor-masterclass',
       title: 'Quintor Masterclass',
       subtitle: 'Intensief leertraject',
-      description: 'Een praktijkgericht leertraject bij Quintor met focus op professionele Java backend development. Van Spring Boot en REST API\'s tot security, testing en clean architecture, volledig hands on en direct toepasbaar.',
-      image: 'companys/quintor.png'
+        description: 'Praktijkgericht leertraject gericht op professionele Java backend development.',
+        image: 'companys/quintor.png',
+        technologies: ['Spring Boot', 'Java', 'REST API', 'Spring Security', 'JPA', 'Hibernate', 'Testing'],
+        year: '2025',
+        featured: false,
     },
     {
       slug: 'ocphell',
       title: 'OCPHell.nl',
       subtitle: 'Online platform',
-      description: 'Een online platform voor het oefenen en trainen van Oracle Certified Professional examens. Volledige quiz-applicatie met progress tracking en uitgebreide uitleg.',
-      image: 'header/header_ocphell.png'
+        description: 'Oefenplatform voor Oracle Certified Professional examens met progress tracking en uitgebreide uitleg.',
+        image: 'header/header_ocphell.png',
+        technologies: ['Angular', 'TypeScript', '.NET', 'SQL Server'],
+        year: '2022',
+        featured: false,
     },
     {
       slug: 'mobile-games',
       title: 'Mobile Games',
       subtitle: 'Android game development',
-      description: 'Ontwikkeling van Android-games bij Vasco Games, waarbij ik verantwoordelijk was voor het volledige traject van concept tot publicatie in de Google Play Store. Ik werkte aan game design, gameplay-mechanieken, optimalisatie voor performance en het vergroten van user engagement. Daarnaast deed ik uitgebreide ervaring op met advertentie-integraties en in-app-aankopen, waaronder het optimaliseren van inkomstenstromen en het analyseren van spelersgedrag om de games continu te verbeteren.',
-      image: 'header/header_mobile.jpg'
-    }
+        description: 'Android games bij Vasco Games, van concept tot publicatie. Het bedrijf stond op plek 3 wereldwijd op Android.',
+        image: 'header/header_mobile.jpg',
+        technologies: ['Android', 'Java', 'Unity', 'Firebase', 'AdMob', 'Online Multiplayer'],
+        year: '2018',
+        featured: false,
+    },
   ];
 }

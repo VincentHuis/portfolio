@@ -1,25 +1,40 @@
-<section id="projecten" class="section">
-  <div class="section-content">
-    <h2>Projecten</h2>
-    <div class="projects-grid">
-      @for (project of projects; track project.title) {
-        <div class="project-card">
-          <div class="project-image">
-            <img [src]="project.image" [alt]="project.title">
-          </div>
-          <div class="project-info">
-            <h3>{{ project.title }}</h3>
-            <p class="subtitle">{{ project.subtitle }}</p>
-            <p class="description">{{ project.description }}</p>
-            <a [routerLink]="['/project', project.slug]" class="read-more-btn">
-              Lees meer
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
+<section id="projecten" class="projecten-section">
+    <div class="section-header">
+    <span class="section-label">
+      <span class="label-index">01</span>
+      <span class="label-line"></span>
+      <span class="label-name">Projecten</span>
+    </span>
+        <h2 class="section-title">
+            <span>Ik maak het</span>
+            <app-text-rotate
+                    [texts]="rotatingTexts"
+                    [rotationInterval]="2200"
+                    mainClassName="rotate-highlight"
+                    charClassName="rotate-char"
+            ></app-text-rotate>
+        </h2>
+    </div>
+
+    <div class="bento-grid">
+        @for (project of projects; track project.slug; let i = $index) {
+            <div class="bento-card bento-card-{{ i }}">
+                <div class="card-image">
+                    <img [src]="project.image" [alt]="project.title">
+                    <div class="card-fade"></div>
+                    <span class="card-year">{{ project.year }}</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-sub">{{ project.subtitle }}</span>
+                    <h3 class="card-title">{{ project.title }}</h3>
+                    <p class="card-desc">{{ project.description }}</p>
+                    <div class="pill-row">
+                        @for (tech of project.technologies; track tech) {
+                            <span class="pill">{{ tech }}</span>
+                        }
           </div>
         </div>
-      }
-    </div>
+            </div>
+        }
   </div>
 </section>
