@@ -9,7 +9,7 @@ import {ProjectDetail, ProjectModalComponent} from '../project-modal/project-mod
   styleUrl: './projecten.css',
 })
 export class Projecten {
-  rotatingTexts = ['werkend.', 'mooi.', 'onderhoudbaar.', 'snel.', 'schaalbaar.', 'testbaar.', 'toekomstbestendig.'];
+  rotatingTexts = ['werkend.', 'mooi.', 'onderhoudbaar.', 'schaalbaar.', 'testbaar.', 'toekomstbestendig.'];
   selectedProject: ProjectDetail | null = null;
 
   openProject(project: ProjectDetail) {

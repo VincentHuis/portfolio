@@ -25,42 +25,12 @@
   flex: 1;
 }
 
-.hero-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 2rem;
-  padding: 0.4rem 1rem 0.4rem 0.6rem;
-  border: 1px solid var(--color-border);
-  border-radius: 100px;
-  background: var(--color-card);
-}
-
-.label-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--color-accent);
-  animation: pulse-dot 2s ease-in-out infinite;
-}
-
-@keyframes pulse-dot {
-  0%, 100% {
-    opacity: 1;
-    box-shadow: 0 0 0 0 var(--color-accent-glow);
-  }
-  50% {
-    opacity: 0.7;
-    box-shadow: 0 0 0 6px transparent;
-  }
-}
-
-.label-text {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.hero-greeting {
+  font-family: 'VT323', monospace;
+  font-size: 1.8rem;
   color: var(--color-ink-muted);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.04em;
 }
 
 .hero-name {

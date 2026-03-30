@@ -30,7 +30,7 @@ export class Homepage implements AfterViewInit {
   }
 
   closeImage() {
-    this.currentImage = 'vincent_teleurgesteld.png';
+    this.currentImage = 'vincent_teleurgesteld.jpg';
     this.cdr.detectChanges();
     setTimeout(() => {
       this.imageVisible = false;
@@ -43,7 +43,7 @@ export class Homepage implements AfterViewInit {
     if (this.sadTimeout) {
       clearTimeout(this.sadTimeout);
     }
-    this.currentImage = 'vincent_teleurgesteld.png';
+    this.currentImage = 'vincent_teleurgesteld.jpg';
     this.cdr.detectChanges();
     this.sadTimeout = setTimeout(() => {
       this.currentImage = 'ik2.jpg';
