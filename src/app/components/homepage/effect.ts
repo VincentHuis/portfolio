@@ -24,12 +24,12 @@ interface Particle {
   template: `<canvas #canvas></canvas>`,
   styles: [`
     :host {
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
+      z-index: 0;
       pointer-events: none;
     }
     canvas {
@@ -42,11 +42,12 @@ interface Particle {
 export class ParticleBackgroundComponent implements AfterViewInit, OnDestroy {
   @ViewChild('canvas') canvasRef!: ElementRef<HTMLCanvasElement>;
   @Input() particleCount = 200;
-  @Input() baseHue = 30;
+  @Input() baseHue = 220;
   @Input() minRadius = 80; // Minimum distance from mouse
   @Input() maxRadius = 400; // Maximum distance from mouse
   @Input() fadeInnerRadius = 100; // Fade when closer than this
   @Input() fadeOuterRadius = 350; // Fade when further than this
+  @Input() anchorElement?: HTMLElement; // Element to center particles on
 
   private ctx!: CanvasRenderingContext2D;
   private particles: Particle[] = [];
@@ -64,11 +65,6 @@ export class ParticleBackgroundComponent implements AfterViewInit, OnDestroy {
     const canvas = this.canvasRef.nativeElement;
     this.ctx = canvas.getContext('2d')!;
     this.resize();
-    // Initialize mouse to center
-    this.mouseX = window.innerWidth / 2;
-    this.mouseY = window.innerHeight / 2;
-    this.targetMouseX = this.mouseX;
-    this.targetMouseY = this.mouseY;
     this.initParticles();
     this.animate();
   }
@@ -81,14 +77,33 @@ export class ParticleBackgroundComponent implements AfterViewInit, OnDestroy {
   @HostListener('window:resize')
   resize(): void {
     const canvas = this.canvasRef.nativeElement;
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const rect = canvas.parentElement!.getBoundingClientRect();
+    canvas.width = rect.width;
+    canvas.height = rect.height;
+    this.updateCenter();
+    this.targetMouseX = this.mouseX;
+    this.targetMouseY = this.mouseY;
   }
 
-  @HostListener('window:mousemove', ['$event'])
-  onMouseMove(event: MouseEvent): void {
-    this.targetMouseX = event.clientX;
-    this.targetMouseY = event.clientY;
+  private anchorFound = false;
+
+  private updateCenter(): void {
+    const canvas = this.canvasRef.nativeElement;
+    if (this.anchorElement && this.anchorElement.isConnected) {
+      const canvasRect = canvas.parentElement!.getBoundingClientRect();
+      const anchorRect = this.anchorElement.getBoundingClientRect();
+      this.mouseX = anchorRect.left - canvasRect.left + anchorRect.width / 2;
+      this.mouseY = anchorRect.top - canvasRect.top + anchorRect.height / 2;
+      this.targetMouseX = this.mouseX;
+      this.targetMouseY = this.mouseY;
+      this.anchorFound = true;
+    } else if (!this.anchorFound) {
+      this.mouseX = canvas.width / 2;
+      this.mouseY = canvas.height / 2;
+      this.targetMouseX = this.mouseX;
+      this.targetMouseY = this.mouseY;
+    }
+    // If anchor was found but is now gone, keep last known position
   }
 
   private initParticles(): void {
@@ -130,23 +145,9 @@ export class ParticleBackgroundComponent implements AfterViewInit, OnDestroy {
 
     this.time += 0.01;
 
-    // Track velocity before updating position
-    const prevMouseX = this.mouseX;
-    const prevMouseY = this.mouseY;
-
-    // Smoothly follow mouse
-    this.mouseX += (this.targetMouseX - this.mouseX) * 0.06;
-    this.mouseY += (this.targetMouseY - this.mouseY) * 0.06;
-
-    // Calculate and smooth velocity
-    const instantVelX = this.mouseX - prevMouseX;
-    const instantVelY = this.mouseY - prevMouseY;
-    this.velocityX += (instantVelX - this.velocityX) * 0.1;
-    this.velocityY += (instantVelY - this.velocityY) * 0.1;
-
-    // Velocity magnitude and direction
-    const speed = Math.sqrt(this.velocityX * this.velocityX + this.velocityY * this.velocityY);
-    const velAngle = Math.atan2(this.velocityY, this.velocityX);
+    this.updateCenter();
+    const centerX = this.mouseX;
+    const centerY = this.mouseY;
 
     for (const particle of this.particles) {
       // Radial back-and-forth movement toward/away from center
@@ -157,22 +158,13 @@ export class ParticleBackgroundComponent implements AfterViewInit, OnDestroy {
       // Small perpendicular wobble for organic feel
       const wobble = Math.sin(this.time * 0.3 + particle.noiseOffsetY) * 8;
 
-      // Calculate how aligned this particle is with movement direction
-      // 1 = moving toward particle, -1 = moving away from particle
-      const angleDiff = particle.angle - velAngle;
-      const alignment = Math.cos(angleDiff);
+      const adjustedRadius = particle.currentRadius;
 
-      // Shift particles toward movement direction
-      // Particles in front get pulled closer, particles behind get pushed further
-      const densityShift = alignment * speed * 15;
-      const adjustedRadius = particle.currentRadius - densityShift;
-
-      // Calculate position
-      particle.x = this.mouseX + Math.cos(particle.angle) * adjustedRadius + Math.cos(particle.angle + Math.PI/2) * wobble;
-      particle.y = this.mouseY + Math.sin(particle.angle) * adjustedRadius + Math.sin(particle.angle + Math.PI/2) * wobble;
+      // Calculate position relative to fixed center
+      particle.x = centerX + Math.cos(particle.angle) * adjustedRadius + Math.cos(particle.angle + Math.PI / 2) * wobble;
+      particle.y = centerY + Math.sin(particle.angle) * adjustedRadius + Math.sin(particle.angle + Math.PI / 2) * wobble;
 
       // Fade based on current distance from center
-      // Stronger fade near center - like hitting an invisible blob
       const distance = Math.max(0, adjustedRadius);
 
       let opacity = 1;
@@ -239,9 +231,9 @@ export class ParticleBackgroundComponent implements AfterViewInit, OnDestroy {
     );
     alpha *= Math.max(0, Math.min(edgeFadeX, edgeFadeY));
 
-    this.ctx.font = '11px monospace';
+    this.ctx.font = '11px "Space Mono", monospace';
     this.ctx.textBaseline = 'top';
-    this.ctx.fillStyle = `rgba(30, 30, 30, ${alpha})`;
+    this.ctx.fillStyle = `rgba(10, 10, 10, ${alpha})`;
 
     this.ctx.fillText(text, Math.round(x), Math.round(y));
   }

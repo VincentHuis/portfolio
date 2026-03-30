@@ -1,4 +1,4 @@
-/* Global styles */
+/* Global styles — Typographic Terminal */
 
 * {
   margin: 0;
@@ -7,19 +7,20 @@
 }
 
 :root {
-  --font-display: 'Instrument Serif', Georgia, serif;
-  --font-body: 'DM Sans', -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: 'Outfit', -apple-system, sans-serif;
+  --font-body: 'Outfit', -apple-system, sans-serif;
+  --font-mono: 'Space Mono', 'JetBrains Mono', monospace;
 
-  --color-bg: #f8f6f1;
-  --color-bg-warm: #f0ece4;
-  --color-ink: #1a1a18;
-  --color-ink-light: #4a4a45;
-  --color-ink-muted: #8a8a82;
-  --color-accent: #c45d3e;
-  --color-accent-hover: #a84d32;
-  --color-border: #d8d4cb;
-  --color-card: #fffef9;
+  --color-bg: #fafafa;
+  --color-bg-warm: #f2f2f2;
+  --color-ink: #0a0a0a;
+  --color-ink-light: #3a3a3a;
+  --color-ink-muted: #7a7a7a;
+  --color-accent: #0066ff;
+  --color-accent-hover: #0052cc;
+  --color-accent-glow: rgba(0, 102, 255, 0.12);
+  --color-border: #e0e0e0;
+  --color-card: #ffffff;
 }
 
 html {

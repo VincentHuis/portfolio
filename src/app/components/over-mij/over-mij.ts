@@ -1,180 +1,48 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-over-mij',
-  imports: [CommonModule],
+  standalone: true,
   templateUrl: './over-mij.html',
   styleUrl: './over-mij.css',
 })
-export class OverMij implements AfterViewInit {
-  @ViewChild('section', { static: false }) section!: ElementRef;
-
-  icons = [
-    'ab-testing.png',
-    'ads.png',
-    'api.png',
-    'app-development.png',
-    'cloud-computing.png',
-    'coding.png',
-    'file-transfer.png',
-    'javascript.png',
-    'loading.png',
-    'web-development.png'
-  ];
-
-  timelineEvents = [
+export class OverMij {
+  timelineItems = [
+    {
+      year: '2026',
+      title: 'Qwest',
+      organization: 'Eigen project',
+      description: 'Fullstack D&D campaign tool met Spring Boot, Angular, Spring AI, WebSockets en fijnmazig permissiesysteem.',
+    },
     {
       year: '2025',
-      title: 'Quintor',
-      description: 'Java-consultant',
-      side: 'left',
-      logo: 'companys/quintor.png'
+      title: 'Quintor Masterclass',
+      organization: 'Quintor',
+      description: 'Intensief leertraject gericht op professionele Java backend development. Spring Boot, security, testing en clean architecture.',
     },
     {
-      year: '',
-      title: '',
-      description: '',
-      side: 'milestone',
-      logo: 'graduation.png',
-      milestone: true,
-      tooltipText: 'HBO-ICT afgerond met eindcijfer: 8'
+      year: '2025',
+      title: 'Afstudeerstage',
+      organization: 'Innovatiehuis Politie Noord-Nederland',
+      description: 'Modulaire paslezer ontwikkeld voor de financiële recherche. NFC, magneetstrip en camera-integratie op Raspberry Pi.',
     },
     {
-      year: '2024',
-      title: 'Innovatiehuis Politie Noord-Nederland',
-      description: 'Afstudeerstage',
-      side: 'right',
-      logo: 'companys/politie_logo.png'
-    },
-    {
-      year: '2022',
-      title: 'Holland Casino',
-      description: 'Horeca, interne opleider & croupier',
-      side: 'left',
-      logo: 'companys/holland_casino.jpg'
+      year: '2025',
+      title: 'OCPHell.nl',
+      organization: 'Eigen project',
+      description: 'Oefenplatform gebouwd voor Oracle Certified Professional examens met Angular en .NET.',
     },
     {
       year: '2021',
-      title: 'Croptimise',
-      description: 'Eigen bedrijf opgericht',
-      side: 'right',
-      logo: 'companys/croptimise_logo.png'
-    },
-    {
-      year: '2019',
-      title: 'Infraconnect',
-      description: 'Systeembeheerder',
-      side: 'left',
-      logo: 'companys/infraconnect_bv_logo.jpg'
-    },
-    {
-      year: '2019',
-      title: 'HBO-ICT',
-      description: 'Hanze Groningen',
-      side: 'right',
-      milestone: true,
-      logo: 'companys/start_edu.png',
-      tooltipText: 'Start opleiding HBO-ICT te Hanze'
-
+      title: 'Croptimise opgericht',
+      organization: 'Eigen bedrijf',
+      description: 'Startup in precisielandbouw. Smart Potato sensor gebouwd. 3e bij Rabobank Ondernemersprijs. Partners: VodafoneZiggo, TNO, Dell EMC.',
     },
     {
       year: '2018',
-      title: 'Vasco Games B.V.',
-      description: 'Android game developer',
-      side: 'left',
-      logo: 'companys/vasco-games-logo.jpg'
-    },
-    {
-      year: '',
-      title: '',
-      description: '',
-      side: 'milestone',
-      logo: 'graduation.png',
-      milestone: true,
-      tooltipText: 'Applicatie ontwikkelaar afgerond aan Noorderpoort'
-    },
-    {
-      year: '2016',
-      title: 'Software Ontwikkelaar (Stage)',
-      description: 'Dienst Uitvoering Onderwijs (DUO)',
-      side: 'right',
-      logo: 'companys/dienst_uitvoering_onderwijs_ministerie_van_ocw__logo.jpg'
-    },
-    {
-      year: '2016',
-      title: 'Software Ontwikkelaar (Stage)',
-      description: 'New Heap',
-      side: 'left',
-      logo: 'companys/new_heap.png'
-    },
-    {
-      year: '2016',
-      title: 'Software Ontwikkelaar (Stage)',
-      description: 'Ambta',
-      side: 'right',
-      logo: 'companys/studie.jpg'
-    },
-    {
-      year: '2016',
-      title: 'Noorderpoort',
-      description: 'Applicatie Ontwikkelaar',
-      side: 'left',
-      milestone: true,
-      logo: 'companys/start_edu.png',
-      tooltipText: 'Start opleiding Applicatie Ontwikkelaar te Noorderpoort'
+      title: 'Game Developer',
+      organization: 'Vasco Games',
+      description: 'Android games ontwikkeld voor het bedrijf dat op plek 3 wereldwijd stond. 1B+ downloads. Online multiplayer, monetization en analytics.',
     },
   ];
-
-  hasVisited = false;
-  isFloating = false;
-
-  skills = [
-    {
-      category: 'Languages',
-      items: [
-        { name: 'Java', level: 90, icon: '☕' },
-        { name: 'Python', level: 85, icon: '🐍' },
-        { name: 'C#', level: 80, icon: '💠' },
-        { name: 'TypeScript', level: 85, icon: '📘' },
-        { name: 'SQL', level: 80, icon: '🗄️' },
-        { name: 'HTML', level: 90, icon: '🌐' },
-        { name: 'CSS', level: 85, icon: '🎨' }
-      ]
-    },
-    {
-      category: 'Frameworks',
-      items: [
-        { name: 'Spring Boot', level: 90, icon: '🍃' },
-        { name: '.NET Core', level: 80, icon: '🔷' },
-        { name: 'Angular', level: 85, icon: '🅰️' },
-        { name: 'React', level: 75, icon: '⚛️' },
-      ]
-    },
-    {
-      category: 'Tools & Technologies',
-      items: [
-        { name: 'Docker', level: 85, icon: '🐳' },
-        { name: 'Git', level: 90, icon: '📦' },
-        { name: 'PostgreSQL', level: 85, icon: '🐘' },
-        { name: 'Gen AI', level: 85, icon: '🤖' },
-        { name: 'CI/CD', level: 85, icon: '🔄' }
-      ]
-    }
-  ];
-
-  ngAfterViewInit() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !this.hasVisited) {
-          this.hasVisited = true;
-          this.isFloating = true;
-        }
-      });
-    }, { threshold: 0.2 });
-
-    if (this.section) {
-      observer.observe(this.section.nativeElement);
-    }
-  }
 }
