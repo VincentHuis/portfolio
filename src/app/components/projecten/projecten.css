@@ -45,9 +45,11 @@
   letter-spacing: -0.03em;
   line-height: 1.1;
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
+  flex-wrap: nowrap;
+  align-items: center;
   gap: 0.5rem;
+  height: 70px;
+  overflow: hidden;
 }
 
 :host ::ng-deep .rotate-highlight {
@@ -56,6 +58,8 @@
   padding: 0.1em 0.4em;
   border-radius: 6px;
   overflow: hidden;
+  height: 85px;
+  min-width: 200px;
 }
 
 :host ::ng-deep .rotate-char {
@@ -121,6 +125,7 @@
   height: 160px;
   overflow: hidden;
   z-index: 0;
+  margin-bottom: -1px;
 }
 
 .card-image img {
@@ -128,20 +133,15 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-.bento-card:hover .card-image img {
-  transform: scale(1.05);
 }
 
 .card-fade {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: linear-gradient(to top, var(--color-card) 5%, transparent 100%);
+  bottom: -2px;
+  left: -1px;
+  right: -1px;
+  height: 55%;
+  background: linear-gradient(to top, var(--color-card) 8%, transparent 100%);
   pointer-events: none;
 }
 
@@ -166,6 +166,9 @@
   z-index: 1;
   padding: 0.75rem 1.5rem 1.25rem;
   margin-top: -2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-sub {
@@ -199,6 +202,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
+  margin-top: auto;
 }
 
 .pill {

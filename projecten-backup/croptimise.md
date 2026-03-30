@@ -4,7 +4,7 @@
 **Slug:** croptimise
 **Image:** header/header_croptimise.png
 **Featured:** true
-**Year:** 2023
+**Year:** 2021
 **Technologies:** IoT, LoRaWAN, Cloud Computing, Data Analytics, Angular, Python
 **YouTube Videos:**
 

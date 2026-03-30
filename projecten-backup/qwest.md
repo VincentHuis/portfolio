@@ -3,7 +3,7 @@
 **Subtitle:** D&D Campaign Tool
 **Slug:** qwest
 **Image:** projecten/qwest.png
-**Year:** 2025
+**Year:** 2026
 **Technologies:** Spring Boot, Spring AI, Angular, Java 21, WebSockets, JWT, WebAuthn, MySQL, Liquibase, TypeScript, CI/CD
 
 ## Korte beschrijving

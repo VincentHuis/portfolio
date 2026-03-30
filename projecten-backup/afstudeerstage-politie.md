@@ -4,7 +4,7 @@
 **Slug:** afstudeerstage-politie
 **Image:** companys/politie_logo.png
 **Featured:** true
-**Year:** 2023
+**Year:** 2025
 **Technologies:** Python, Raspberry Pi, NFC / RFID, Magneetstrip, OCR, Computer Vision, Hardware Integration, Embedded Systems, Security, Data Encryption, Local Data Storage, Agile / Scrum, Prototyping
 
 ## Korte beschrijving

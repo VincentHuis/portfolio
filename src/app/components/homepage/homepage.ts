@@ -1,12 +1,15 @@
-import {ChangeDetectorRef, Component} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, ElementRef, ViewChild} from '@angular/core';
+import {ParticleBackgroundComponent} from './effect';
 
 @Component({
   selector: 'app-homepage',
-  imports: [],
+  imports: [ParticleBackgroundComponent],
   templateUrl: './homepage.html',
   styleUrl: './homepage.css',
 })
-export class Homepage {
+export class Homepage implements AfterViewInit {
+  @ViewChild('photoEl') photoElRef?: ElementRef<HTMLElement>;
+  photoAnchor?: HTMLElement;
   imageVisible = true;
   imageScale = 1;
   currentImage = 'ik2.jpg';
@@ -17,6 +20,13 @@ export class Homepage {
   private sadTimeout: ReturnType<typeof setTimeout> | null = null;
 
   constructor(private cdr: ChangeDetectorRef) {
+  }
+
+  ngAfterViewInit() {
+    if (this.photoElRef) {
+      this.photoAnchor = this.photoElRef.nativeElement;
+      this.cdr.detectChanges();
+    }
   }
 
   closeImage() {

@@ -1,0 +1,245 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4rem 2rem;
+  overflow-y: auto;
+}
+
+.modal-panel {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  max-width: 720px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Header */
+.modal-header {
+  position: relative;
+}
+
+.modal-header-img {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.modal-header-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-header-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(to top, var(--color-card) 0%, transparent 100%);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  z-index: 2;
+}
+
+.modal-close:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-header-info {
+  position: relative;
+  padding: 0 2rem;
+  margin-top: -2.5rem;
+  z-index: 1;
+}
+
+.modal-year {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-ink);
+  letter-spacing: -0.03em;
+  margin: 0.25rem 0 0.15rem;
+}
+
+.modal-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-ink-muted);
+  letter-spacing: 0.04em;
+}
+
+/* Body */
+.modal-body {
+  padding: 1.5rem 2rem 2rem;
+}
+
+/* Tech section */
+.modal-tech-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.modal-tech-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--color-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.modal-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.modal-tech {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--color-ink-light);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  padding: 0.3rem 0.75rem;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+
+/* Description */
+.modal-description {
+  color: var(--color-ink-light);
+  line-height: 1.8;
+}
+
+.modal-description ::ng-deep h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin: 2rem 0 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.modal-description ::ng-deep h3:first-child {
+  margin-top: 0;
+}
+
+.modal-description ::ng-deep p {
+  font-size: 0.92rem;
+  margin-bottom: 1rem;
+  color: var(--color-ink-light);
+}
+
+.modal-description ::ng-deep ul {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.modal-description ::ng-deep li {
+  font-size: 0.92rem;
+  color: var(--color-ink-light);
+  padding-left: 1.25rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.modal-description ::ng-deep li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 5px;
+  height: 5px;
+  background: var(--color-accent);
+  border-radius: 50%;
+}
+
+.modal-description ::ng-deep strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+/* Link */
+.modal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.25rem;
+  background: var(--color-ink);
+  color: var(--color-card);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.modal-link:hover {
+  background: var(--color-accent);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .modal-backdrop {
+    padding: 1rem;
+    align-items: flex-start;
+  }
+
+  .modal-header-img {
+    height: 160px;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
+  .modal-body {
+    padding: 1.25rem 1.5rem 1.5rem;
+  }
+
+  .modal-header-info {
+    padding: 0 1.5rem;
+  }
+}

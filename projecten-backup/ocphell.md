@@ -3,7 +3,7 @@
 **Subtitle:** Online platform
 **Slug:** ocphell
 **Image:** header/header_ocphell.png
-**Year:** 2022
+**Year:** 2025
 **Technologies:** Angular, TypeScript, .NET, SQL Server
 **Link:** https://ocphell.nl
 

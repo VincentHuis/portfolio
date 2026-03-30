@@ -1,4 +1,5 @@
 <section id="home" class="homepage">
+  <app-particle-background [anchorElement]="photoAnchor"></app-particle-background>
   <div class="homepage-content">
     <div class="hero-left">
       <div class="hero-label">
@@ -19,7 +20,7 @@
     </div>
     @if (imageVisible) {
       <div class="hero-right">
-        <div class="terminal-window" [style.transform]="'scale(' + imageScale + ')'"
+        <div #photoEl class="terminal-window" [style.transform]="'scale(' + imageScale + ')'"
              [style.transform-origin]="'top right'">
           <div class="terminal-titlebar">
             <div class="terminal-dots">
