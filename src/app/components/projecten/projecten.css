@@ -100,6 +100,11 @@
   grid-column: span 5;
 }
 
+/* Row 4: full width */
+.bento-card-6 {
+  grid-column: span 12;
+}
+
 /* ── Card ── */
 .bento-card {
   position: relative;
@@ -255,6 +260,10 @@
     grid-column: span 3;
   }
 
+  .bento-card-6 {
+    grid-column: span 6;
+  }
+
   .section-title {
     font-size: 2.8rem;
   }
@@ -271,7 +280,8 @@
   }
 
   .bento-card-0, .bento-card-1, .bento-card-2,
-  .bento-card-3, .bento-card-4, .bento-card-5 {
+  .bento-card-3, .bento-card-4, .bento-card-5,
+  .bento-card-6 {
     grid-column: span 1;
   }
 
