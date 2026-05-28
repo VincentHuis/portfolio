@@ -118,6 +118,34 @@ export class Projecten {
       year: '2026',
     },
     {
+      slug: 'voicedrop',
+      title: 'VoiceDrop',
+      subtitle: 'Wear OS stemnotities app',
+      description: 'Handsfree stemnotities opnemen op je Wear OS horloge. Transcribeert on-device en synchroniseert direct naar je Android telefoon.',
+      detailedDescription: `
+<h3>Over het project</h3>
+<p>VoiceDrop is een Wear OS app waarmee je met één tik een stemnotitie insprekt. De spraak wordt direct op het horloge getranscribeerd en zonder tussenkomst van een server gesynchroniseerd naar je Android telefoon.</p>
+
+<h3>Functies</h3>
+<ul>
+  <li><strong>On-device transcriptie:</strong> Geen audio opgeslagen, geen server nodig, volledige privacy</li>
+  <li><strong>Auto-categorisatie:</strong> Het eerste woord bepaalt het type: boodschappenlijst, herinnering, taak, idee of agenda-item</li>
+  <li><strong>Slimme herinneringen:</strong> Natuurlijke taal zoals "morgen om 9" of "over een uur" wordt omgezet naar exacte alarmtijden</li>
+  <li><strong>Locatieherinneringen:</strong> Meldingen op basis van geofences</li>
+  <li><strong>Google Calendar:</strong> Directe toevoeging van notities als agenda-item</li>
+  <li><strong>Home widget:</strong> Boodschappenlijst zichtbaar op het startscherm</li>
+  <li><strong>Meertalig:</strong> Nederlands, Duits en Engels ondersteund</li>
+</ul>
+
+<h3>Technische opbouw</h3>
+<p>De app bestaat uit twee modules: een Wear OS module voor opname en een mobile module voor opslag en weergave. Synchronisatie verloopt via de Wearable Data Layer zodat alles draadloos en betrouwbaar binnenkomt.</p>
+      `,
+      image: 'projecten/voice_drop (1) (2) (1).png',
+      technologies: ['Kotlin', 'Wear OS', 'Jetpack Compose', 'Room', 'Wearable Data Layer', 'Google Calendar API'],
+      year: '2026',
+      link: 'https://github.com/VincentHuis/VoiceDrop',
+    },
+    {
       slug: 'quintor-masterclass',
       title: 'Quintor Masterclass',
       subtitle: 'Intensief leertraject',
