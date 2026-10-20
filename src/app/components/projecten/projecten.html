@@ -77,11 +77,21 @@
                 <ng-container [ngTemplateOutlet]="card"
                               [ngTemplateOutletContext]="{ $implicit: project, highlight: true }"/>
             }
-            <div class="project-grid">
-                @for (project of regularProjects(); track project.slug) {
+            <div class="project-grid" id="project-grid">
+                @for (project of visibleRegularProjects(); track project.slug) {
                     <ng-container [ngTemplateOutlet]="card" [ngTemplateOutletContext]="{ $implicit: project }"/>
                 }
             </div>
+            @if (hasMoreProjects()) {
+                <button type="button" class="more-button" (click)="toggleShowAll()"
+                        [attr.aria-expanded]="showAllProjects()" aria-controls="project-grid">
+                    {{ showAllProjects() ? 'Minder projecten' : 'Meer projecten' }}
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                         aria-hidden="true" [class.more-icon--open]="showAllProjects()">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
+            }
         </div>
     }
 </section>

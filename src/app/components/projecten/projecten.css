@@ -56,6 +56,41 @@
   gap: 1rem;
 }
 
+.more-button {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  background: var(--color-card);
+  color: var(--color-ink);
+  border: 1px solid var(--color-ink);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.more-button:hover,
+.more-button:focus-visible {
+  background: var(--color-ink);
+  color: var(--color-card);
+  outline: none;
+}
+
+.more-button svg {
+  transition: transform 0.2s ease;
+}
+
+.more-button svg.more-icon--open {
+  transform: rotate(180deg);
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;

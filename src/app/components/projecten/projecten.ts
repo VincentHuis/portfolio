@@ -3,6 +3,8 @@ import {NgTemplateOutlet} from '@angular/common';
 import {TextRotateComponent} from '../text-rotate/text-rotate';
 import {ProjectDetail} from './project-detail';
 
+const VISIBLE_REGULAR_PROJECTS = 4;
+
 @Component({
   selector: 'app-projecten',
   imports: [TextRotateComponent, NgTemplateOutlet],
@@ -19,7 +21,16 @@ export class Projecten {
   readonly selectedProject = signal<ProjectDetail | null>(null);
   readonly highlights = computed(() => this.projects.filter(p => p.highlight));
   readonly regularProjects = computed(() => this.projects.filter(p => !p.highlight));
+  readonly showAllProjects = signal(false);
+  readonly visibleRegularProjects = computed(() =>
+    this.showAllProjects() ? this.regularProjects() : this.regularProjects().slice(0, VISIBLE_REGULAR_PROJECTS),
+  );
+  readonly hasMoreProjects = computed(() => this.regularProjects().length > VISIBLE_REGULAR_PROJECTS);
   readonly otherProjects = computed(() => this.projects.filter(p => p !== this.selectedProject()));
+
+  toggleShowAll() {
+    this.showAllProjects.update(showAll => !showAll);
+  }
 
   toggleProject(project: ProjectDetail) {
     this.selectedProject.update(current => (current === project ? null : project));

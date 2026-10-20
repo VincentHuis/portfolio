@@ -20,13 +20,29 @@ describe('Projecten', () => {
     await fixture.whenStable();
   };
 
-  it('shows the highlights first, followed by the regular projects in a grid', () => {
+  it('shows the highlights first, followed by four regular projects in a grid', () => {
     const highlights = element.querySelectorAll('.project-card--highlight .card-title');
     const regular = element.querySelectorAll('.project-grid .project-card');
 
     expect([...highlights].map(h => h.textContent)).toEqual(['Tender AI', 'Croptimise']);
-    expect(regular.length).toBe(component.projects.length - 2);
+    expect(regular.length).toBe(4);
     expect(element.querySelector('.project-detail')).toBeNull();
+  });
+
+  it('shows all regular projects with the more button and collapses them again', async () => {
+    const button = element.querySelector<HTMLButtonElement>('.more-button')!;
+    expect(button.textContent).toContain('Meer projecten');
+    expect(button.getAttribute('aria-expanded')).toBe('false');
+
+    await click('.more-button');
+
+    expect(element.querySelectorAll('.project-grid .project-card').length).toBe(component.projects.length - 2);
+    expect(button.textContent).toContain('Minder projecten');
+    expect(button.getAttribute('aria-expanded')).toBe('true');
+
+    await click('.more-button');
+
+    expect(element.querySelectorAll('.project-grid .project-card').length).toBe(4);
   });
 
   it('opens the detail view with full text instead of the overview when a project is clicked', async () => {
