@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e9f8f2"/>
+      <stop offset="1" stop-color="#f6efe9"/>
+    </linearGradient>
+    <linearGradient id="fit" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16c796"/>
+      <stop offset="1" stop-color="#0b9a6e"/>
+    </linearGradient>
+    <linearGradient id="fin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3d8bff"/>
+      <stop offset="1" stop-color="#0052cc"/>
+    </linearGradient>
+    <linearGradient id="food" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c2185b"/>
+      <stop offset="1" stop-color="#89023e"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#0a0a0a" flood-opacity="0.14"/>
+    </filter>
+    <path id="drop" d="M12,2 C12,2 5,10.5 5,15 a7,7 0 1,0 14,0 C19,10.5 12,2 12,2 z"/>
+  </defs>
+
+  <rect width="1600" height="600" fill="url(#bg)"/>
+
+  <!-- FinDrop: spending categories -->
+  <g transform="translate(470 95)" filter="url(#shadow)">
+    <rect width="200" height="410" rx="30" fill="#ffffff"/>
+    <rect x="70" y="14" width="60" height="8" rx="4" fill="#e3e3e3"/>
+    <rect x="20" y="40" width="44" height="44" rx="12" fill="url(#fin)"/>
+    <use href="#drop" transform="translate(27 44) scale(1.25)" fill="#ffffff"/>
+    <rect x="76" y="52" width="90" height="10" rx="5" fill="#0a0a0a"/>
+    <circle cx="100" cy="180" r="62" fill="none" stroke="#e8eefc" stroke-width="26"/>
+    <circle cx="100" cy="180" r="62" fill="none" stroke="#0066ff" stroke-width="26" stroke-dasharray="150 390" transform="rotate(-90 100 180)"/>
+    <circle cx="100" cy="180" r="62" fill="none" stroke="#7fb0ff" stroke-width="26" stroke-dasharray="90 390" stroke-dashoffset="-150" transform="rotate(-90 100 180)"/>
+    <circle cx="100" cy="180" r="62" fill="none" stroke="#b9d3ff" stroke-width="26" stroke-dasharray="70 390" stroke-dashoffset="-240" transform="rotate(-90 100 180)"/>
+    <rect x="20" y="276" width="160" height="34" rx="10" fill="#f2f2f2"/>
+    <rect x="32" y="289" width="70" height="8" rx="4" fill="#cfcfcf"/>
+    <rect x="140" y="289" width="28" height="8" rx="4" fill="#0066ff"/>
+    <rect x="20" y="318" width="160" height="34" rx="10" fill="#f2f2f2"/>
+    <rect x="32" y="331" width="90" height="8" rx="4" fill="#cfcfcf"/>
+    <rect x="140" y="331" width="28" height="8" rx="4" fill="#7fb0ff"/>
+    <rect x="20" y="360" width="160" height="34" rx="10" fill="#f2f2f2"/>
+    <rect x="32" y="373" width="60" height="8" rx="4" fill="#cfcfcf"/>
+    <rect x="140" y="373" width="28" height="8" rx="4" fill="#b9d3ff"/>
+  </g>
+
+  <!-- FitDrop: daily coaching and heart rate -->
+  <g transform="translate(700 65)" filter="url(#shadow)">
+    <rect width="200" height="470" rx="30" fill="#ffffff"/>
+    <rect x="70" y="14" width="60" height="8" rx="4" fill="#e3e3e3"/>
+    <rect x="20" y="40" width="44" height="44" rx="12" fill="url(#fit)"/>
+    <use href="#drop" transform="translate(27 44) scale(1.25)" fill="#ffffff"/>
+    <rect x="76" y="52" width="80" height="10" rx="5" fill="#0a0a0a"/>
+    <rect x="20" y="104" width="160" height="96" rx="14" fill="#e9f8f2"/>
+    <rect x="34" y="122" width="120" height="9" rx="4.5" fill="#0b9a6e"/>
+    <rect x="34" y="142" width="132" height="8" rx="4" fill="#8fdcc0"/>
+    <rect x="34" y="160" width="98" height="8" rx="4" fill="#8fdcc0"/>
+    <polyline points="22,280 52,280 66,246 82,312 98,262 112,280 178,280" fill="none" stroke="#16c796" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="20" y="340" width="30" height="80" rx="6" fill="#e3e3e3"/>
+    <rect x="58" y="365" width="30" height="55" rx="6" fill="#8fdcc0"/>
+    <rect x="96" y="330" width="30" height="90" rx="6" fill="#16c796"/>
+    <rect x="134" y="352" width="30" height="68" rx="6" fill="#8fdcc0"/>
+  </g>
+
+  <!-- FoodDrop: meal photo and nutrition -->
+  <g transform="translate(930 95)" filter="url(#shadow)">
+    <rect width="200" height="410" rx="30" fill="#ffffff"/>
+    <rect x="70" y="14" width="60" height="8" rx="4" fill="#e3e3e3"/>
+    <rect x="20" y="40" width="44" height="44" rx="12" fill="url(#food)"/>
+    <use href="#drop" transform="translate(27 44) scale(1.25)" fill="#ffffff"/>
+    <rect x="76" y="52" width="90" height="10" rx="5" fill="#0a0a0a"/>
+    <rect x="20" y="104" width="160" height="130" rx="14" fill="#efebce"/>
+    <circle cx="100" cy="169" r="48" fill="#ffffff"/>
+    <circle cx="100" cy="169" r="36" fill="#f6f3e2"/>
+    <circle cx="86" cy="160" r="13" fill="#d8a48f"/>
+    <circle cx="112" cy="162" r="11" fill="#89a35a"/>
+    <circle cx="100" cy="184" r="12" fill="#c589e8"/>
+    <rect x="20" y="256" width="160" height="10" rx="5" fill="#f2f2f2"/>
+    <rect x="20" y="256" width="118" height="10" rx="5" fill="#89023e"/>
+    <rect x="20" y="284" width="160" height="10" rx="5" fill="#f2f2f2"/>
+    <rect x="20" y="284" width="84" height="10" rx="5" fill="#c589e8"/>
+    <rect x="20" y="312" width="160" height="10" rx="5" fill="#f2f2f2"/>
+    <rect x="20" y="312" width="132" height="10" rx="5" fill="#d8a48f"/>
+    <rect x="20" y="340" width="160" height="10" rx="5" fill="#f2f2f2"/>
+    <rect x="20" y="340" width="60" height="10" rx="5" fill="#568ea3"/>
+  </g>
+</svg>

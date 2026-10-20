@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600">
+  <defs>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0" stop-color="#2b6fff"/>
+      <stop offset="1" stop-color="#0a1a4a"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="600" fill="url(#glow)"/>
+
+  <!-- Question card with code -->
+  <g transform="translate(420 90)" filter="url(#shadow)">
+    <rect width="500" height="420" rx="20" fill="#ffffff"/>
+    <rect x="30" y="32" width="90" height="22" rx="11" fill="#e8f0ff"/>
+    <rect x="44" y="40" width="62" height="6" rx="3" fill="#0066ff"/>
+    <rect x="30" y="74" width="380" height="14" rx="7" fill="#0a0a0a"/>
+    <rect x="30" y="98" width="260" height="14" rx="7" fill="#0a0a0a"/>
+    <rect x="30" y="134" width="440" height="110" rx="12" fill="#0f172a"/>
+    <rect x="50" y="156" width="90" height="9" rx="4.5" fill="#c792ea"/>
+    <rect x="148" y="156" width="140" height="9" rx="4.5" fill="#82aaff"/>
+    <rect x="70" y="180" width="120" height="9" rx="4.5" fill="#c3e88d"/>
+    <rect x="198" y="180" width="180" height="9" rx="4.5" fill="#f2f2f2" fill-opacity="0.7"/>
+    <rect x="70" y="204" width="200" height="9" rx="4.5" fill="#ffcb6b"/>
+    <rect x="50" y="228" width="30" height="9" rx="4.5" fill="#c792ea"/>
+    <rect x="30" y="266" width="215" height="54" rx="12" fill="#f2f2f2"/>
+    <rect x="255" y="266" width="215" height="54" rx="12" fill="#0066ff"/>
+    <rect x="30" y="330" width="215" height="54" rx="12" fill="#f2f2f2"/>
+    <rect x="255" y="330" width="215" height="54" rx="12" fill="#f2f2f2"/>
+    <rect x="50" y="289" width="120" height="8" rx="4" fill="#bdbdbd"/>
+    <rect x="275" y="289" width="140" height="8" rx="4" fill="#ffffff"/>
+    <rect x="50" y="353" width="100" height="8" rx="4" fill="#bdbdbd"/>
+    <rect x="275" y="353" width="130" height="8" rx="4" fill="#bdbdbd"/>
+  </g>
+
+  <!-- Round timer -->
+  <g transform="translate(1010 170)">
+    <circle cx="70" cy="70" r="62" fill="#0a1a4a" fill-opacity="0.6"/>
+    <circle cx="70" cy="70" r="54" fill="none" stroke="#ffffff" stroke-opacity="0.15" stroke-width="12"/>
+    <circle cx="70" cy="70" r="54" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-dasharray="240 340" transform="rotate(-90 70 70)"/>
+    <rect x="48" y="62" width="44" height="16" rx="8" fill="#ffffff"/>
+  </g>
+
+  <!-- Live leaderboard -->
+  <g transform="translate(980 340)" filter="url(#shadow)">
+    <rect width="220" height="170" rx="18" fill="#ffffff"/>
+    <circle cx="34" cy="40" r="14" fill="#ffb020"/>
+    <rect x="58" y="34" width="90" height="10" rx="5" fill="#0a0a0a"/>
+    <rect x="166" y="34" width="34" height="10" rx="5" fill="#0066ff"/>
+    <circle cx="34" cy="86" r="14" fill="#b0b8c4"/>
+    <rect x="58" y="80" width="74" height="10" rx="5" fill="#3a3a3a"/>
+    <rect x="166" y="80" width="34" height="10" rx="5" fill="#7fb0ff"/>
+    <circle cx="34" cy="132" r="14" fill="#c98b5a"/>
+    <rect x="58" y="126" width="84" height="10" rx="5" fill="#3a3a3a"/>
+    <rect x="166" y="126" width="34" height="10" rx="5" fill="#b9d3ff"/>
+  </g>
+</svg>

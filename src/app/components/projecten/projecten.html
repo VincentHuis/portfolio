@@ -11,30 +11,98 @@
         </h2>
     </div>
 
-    <div class="bento-grid">
-        @for (project of projects; track project.slug; let i = $index) {
-            <div class="bento-card bento-card-{{ i }}" (click)="openProject(project)">
-                <div class="card-image">
-                    <img [src]="project.image" [alt]="project.title">
-                    <div class="card-fade"></div>
-                    <span class="card-year">{{ project.year }}</span>
-                </div>
-                <div class="card-body">
-                    <span class="card-sub">{{ project.subtitle }}</span>
-                    <h3 class="card-title">{{ project.title }}</h3>
-                    <p class="card-desc">{{ project.description }}</p>
+    @if (selectedProject(); as project) {
+        <article class="project-detail" [attr.aria-label]="project.title">
+            <div class="detail-hero">
+                <button type="button" class="detail-hero-toggle" (click)="toggleProject(project)"
+                        [attr.aria-label]="'Sluit ' + project.title">
+                    <span class="detail-hero-image">
+                        <img [src]="project.image" alt="">
+                    </span>
+                    <span class="detail-hero-info">
+                        <span class="card-year-label">{{ project.year }}</span>
+                        <span class="detail-title">{{ project.title }}</span>
+                        <span class="detail-subtitle">{{ project.subtitle }}</span>
+                    </span>
+                </button>
+                <button type="button" class="detail-close" (click)="closeProject()" aria-label="Terug naar overzicht">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                         aria-hidden="true">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="detail-content">
+                <div class="detail-tech">
+                    <span class="detail-tech-label">Technologieën</span>
                     <div class="pill-row">
                         @for (tech of project.technologies; track tech) {
                             <span class="pill">{{ tech }}</span>
                         }
-          </div>
-        </div>
+                    </div>
+                </div>
+
+                <div class="detail-description" [innerHTML]="project.detailedDescription"></div>
+
+                @if (project.link) {
+                    <a [href]="project.link" target="_blank" rel="noopener" class="detail-link">
+                        Bezoek website
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                             stroke-width="2" aria-hidden="true">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                        </svg>
+                    </a>
+                }
             </div>
-        }
-  </div>
+
+            <nav class="detail-sidebar" aria-label="Andere projecten">
+                <span class="detail-tech-label">Andere projecten</span>
+                @for (other of otherProjects(); track other.slug) {
+                    <button type="button" class="mini-card" (click)="toggleProject(other)">
+                        <span class="mini-card-image">
+                            <img [src]="other.image" alt="">
+                        </span>
+                        <span class="mini-card-body">
+                            <span class="card-sub">{{ other.subtitle }}</span>
+                            <span class="mini-card-title">{{ other.title }}</span>
+                        </span>
+                    </button>
+                }
+            </nav>
+        </article>
+    } @else {
+        <div class="project-overview">
+            @for (project of highlights(); track project.slug) {
+                <ng-container [ngTemplateOutlet]="card"
+                              [ngTemplateOutletContext]="{ $implicit: project, highlight: true }"/>
+            }
+            <div class="project-grid">
+                @for (project of regularProjects(); track project.slug) {
+                    <ng-container [ngTemplateOutlet]="card" [ngTemplateOutletContext]="{ $implicit: project }"/>
+                }
+            </div>
+        </div>
+    }
 </section>
 
-<app-project-modal
-        [project]="selectedProject"
-        (closed)="closeProject()"
-></app-project-modal>
+<ng-template #card let-project let-highlight="highlight">
+    <button type="button" class="project-card" [class.project-card--highlight]="highlight"
+            (click)="toggleProject(project)">
+        <span class="card-image">
+            <img [src]="project.image" alt="">
+            <span class="card-fade"></span>
+            <span class="card-year">{{ project.year }}</span>
+        </span>
+        <span class="card-body">
+            <span class="card-sub">{{ project.subtitle }}</span>
+            <span class="card-title">{{ project.title }}</span>
+            <span class="card-desc">{{ project.description }}</span>
+            <span class="pill-row">
+                @for (tech of project.technologies; track tech) {
+                    <span class="pill">{{ tech }}</span>
+                }
+            </span>
+        </span>
+    </button>
+</ng-template>

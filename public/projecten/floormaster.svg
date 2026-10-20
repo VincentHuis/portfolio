@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+    <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="7" cy="7" r="2" fill="#7fb0ff" fill-opacity="0.75"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="600" fill="#0b2545"/>
+  <rect width="1600" height="600" fill="url(#grid)"/>
+
+  <!-- Phone with LiDAR room scan -->
+  <g transform="translate(330 110)">
+    <rect width="210" height="380" rx="32" fill="#0a0a0a" stroke="#3a5a80" stroke-width="2"/>
+    <rect x="12" y="12" width="186" height="356" rx="24" fill="#13304f"/>
+    <path d="M40 120 L170 100 L170 300 L40 280 Z" fill="url(#dots)"/>
+    <path d="M40 120 L170 100 L170 300 L40 280 Z" fill="none" stroke="#ffffff" stroke-width="3"/>
+    <path d="M40 120 L20 140 L20 300 L40 280" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="3"/>
+    <rect x="96" y="190" width="40" height="88" fill="#0066ff" fill-opacity="0.55" stroke="#7fb0ff" stroke-width="2"/>
+    <circle cx="105" cy="336" r="16" fill="none" stroke="#ffffff" stroke-width="3"/>
+  </g>
+
+  <!-- Arrow: scan to floor plan -->
+  <g fill="none" stroke="#7fb0ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M590 300 H700" stroke-dasharray="2 14"/>
+    <path d="M690 286 L708 300 L690 314"/>
+  </g>
+
+  <!-- Generated floor plan -->
+  <g transform="translate(760 120)" fill="none" stroke-linecap="square">
+    <rect x="0" y="0" width="520" height="360" fill="#ffffff" fill-opacity="0.04"/>
+    <g stroke="#ffffff" stroke-width="12">
+      <path d="M0 0 H520 V360 H0 Z"/>
+      <path d="M300 0 V150"/>
+      <path d="M300 220 V360"/>
+      <path d="M300 150 H360"/>
+      <path d="M440 150 H520"/>
+      <path d="M0 230 H120"/>
+      <path d="M190 230 H300"/>
+    </g>
+    <!-- Windows -->
+    <g stroke="#7fb0ff" stroke-width="12">
+      <path d="M60 0 H200"/>
+      <path d="M380 0 H480"/>
+      <path d="M520 220 V320"/>
+      <path d="M80 360 H220"/>
+    </g>
+    <!-- Doors with swing -->
+    <g stroke="#7fb0ff" stroke-width="3">
+      <path d="M300 150 V220"/>
+      <path d="M300 220 A70 70 0 0 1 370 150" stroke-dasharray="6 6"/>
+      <path d="M120 230 V170"/>
+      <path d="M120 170 A60 60 0 0 1 180 230" stroke-dasharray="6 6"/>
+      <path d="M360 150 L420 110"/>
+    </g>
+  </g>
+</svg>
