@@ -9,34 +9,6 @@
   margin-bottom: 4rem;
 }
 
-.section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.label-index {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--color-accent);
-  letter-spacing: 0.06em;
-}
-
-.label-line {
-  width: 48px;
-  height: 1px;
-  background: var(--color-border);
-}
-
-.label-name {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--color-ink-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
 .section-title {
   font-family: var(--font-display);
   font-size: 4rem;
@@ -100,9 +72,13 @@
   grid-column: span 5;
 }
 
-/* Row 4: full width */
+/* Row 4: 50/50 */
 .bento-card-6 {
-  grid-column: span 12;
+  grid-column: span 6;
+}
+
+.bento-card-7 {
+  grid-column: span 6;
 }
 
 /* ── Card ── */
@@ -261,7 +237,11 @@
   }
 
   .bento-card-6 {
-    grid-column: span 6;
+    grid-column: span 3;
+  }
+
+  .bento-card-7 {
+    grid-column: span 3;
   }
 
   .section-title {
@@ -281,7 +261,7 @@
 
   .bento-card-0, .bento-card-1, .bento-card-2,
   .bento-card-3, .bento-card-4, .bento-card-5,
-  .bento-card-6 {
+  .bento-card-6, .bento-card-7 {
     grid-column: span 1;
   }
 

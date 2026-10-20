@@ -24,6 +24,43 @@ export class Projecten {
 
   projects: ProjectDetail[] = [
     {
+      slug: 'tender-ai',
+      title: 'Tender AI',
+      subtitle: 'AI schrijfassistent voor aanbestedingen',
+      description: 'AI assistent die helpt bij het schrijven van aanbestedingen. Antwoorden zijn gebaseerd op de eigen projectdocumenten en de chatwidget past in elke webapplicatie.',
+      detailedDescription: `
+<h3>Over het project</h3>
+<p>Een aanbesteding schrijven is precisiewerk. De tekst moet kloppen, compleet zijn en aansluiten op alle bijlagen die bij het project horen. Tender AI is een AI schrijfassistent die direct in een bestaande aanbestedingsapplicatie draait. Gebruikers openen een chatvenster en stellen vragen over het hele document of over één geselecteerde sectie. De assistent helpt met schrijven, structureren, verbeteren en controleren.</p>
+
+<h3>Functionaliteiten</h3>
+<ul>
+  <li><strong>Antwoorden op basis van eigen documenten:</strong> De bijlagen van een project worden gesynchroniseerd naar een kennisbank. De assistent baseert zijn antwoorden daarop (RAG)</li>
+  <li><strong>Twee chatmodi:</strong> Vragen stellen over de volledige aanbesteding of over één specifieke sectie</li>
+  <li><strong>Inbouwbare chatwidget:</strong> Gepubliceerd als Web Component, zodat hij werkt in plain HTML, JavaScript en React</li>
+  <li><strong>Beheerportaal:</strong> Projecten aanmaken en koppelen aan documentbibliotheken</li>
+  <li><strong>Automatische synchronisatie:</strong> Een geplande taak uploadt nieuwe bijlagen en houdt per document de status bij</li>
+</ul>
+
+<h3>Architectuur</h3>
+<p>De backend is een modulaire monoliet gebouwd met Spring Modulith. De koppeling met het taalmodel zit achter een eigen gateway, waardoor een andere AI provider toevoegen neerkomt op één nieuwe module. De grenzen tussen modules worden automatisch getest, zodat de architectuur niet ongemerkt vervaagt.</p>
+
+<h3>Security</h3>
+<p>De widget gebruikt de bestaande sessie van de hostapplicatie en de backend controleert die server to server via OAuth2. Chatsessies zijn cryptografisch ondertekend en gekoppeld aan gebruiker en project. De systeemprompt is bestand tegen prompt injection en houdt de assistent bij het onderwerp.</p>
+
+<h3>Technische details</h3>
+<ul>
+  <li><strong>Backend:</strong> Java 25 met Spring Boot 4 en Spring Modulith, Liquibase en MySQL</li>
+  <li><strong>AI:</strong> Mistral voor documentverwerking, embeddings en retrieval</li>
+  <li><strong>Chatwidget:</strong> Preact gecompileerd naar een Web Component</li>
+  <li><strong>Beheerportaal:</strong> React 19 met TanStack Query</li>
+  <li><strong>Kwaliteit:</strong> Architectuurtests, WireMock, SBOM generatie en vastgelegde architectuurbeslissingen</li>
+</ul>
+      `,
+      image: 'projecten/tender_ai.png',
+      technologies: ['Java 25', 'Spring Boot 4', 'Spring Modulith', 'Mistral AI', 'RAG', 'Web Components', 'React', 'MySQL'],
+      year: '2026',
+    },
+    {
       slug: 'afstudeerstage-politie',
       title: 'Afstudeerstage',
       subtitle: 'Innovatiehuis Politie Noord-Nederland',
